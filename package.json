@@ -1,0 +1,11 @@
+{
+  "name": "invoice-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:skyv26/invoice-app.git",
+  "author": "Aakash Verma <dev.aakashv@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
+}
