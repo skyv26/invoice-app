@@ -11,6 +11,8 @@
 # JavaScript Ignore
 /node_modules
 /yarn.lock
+/dist
+.parcel-cache
 
 # Ignore all environment files (except templates).
 /.env*
