@@ -1,20 +1,15 @@
 {
   "name": "invoice-app",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:skyv26/invoice-app.git",
   "author": "Aakash Verma <dev.aakashv@gmail.com>",
   "scripts": {
-    "start": "parcel ./app/javascript/public/index.html --open",
+    "start": "rm -rf .parcel-cache .cache && rm -rf app/assets/builds && parcel ./app/javascript/application.js --dist-dir ./app/assets/builds",
+    "build": "rm -rf .parcel-cache .cache && rm -rf app/assets/builds && parcel build ./app/javascript/application.js --dist-dir ./app/assets/builds",
     "lint": "npx eslint ."
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "7.x",
-    "@babel/eslint-parser": "7.x",
-    "@babel/plugin-syntax-jsx": "7.x",
-    "@babel/preset-env": "7.x",
-    "@babel/preset-react": "7.x",
     "eslint": "7.x",
     "eslint-config-airbnb": "18.x",
     "eslint-plugin-import": "2.x",
@@ -22,6 +17,7 @@
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "4.x",
     "parcel": "^2.10.3",
+    "path-browserify": "^1.0.0",
     "postcss": "^8.4.32",
     "process": "^0.11.10",
     "stylelint": "13.x",
@@ -31,6 +27,8 @@
     "tailwindcss": "^3.3.6"
   },
   "dependencies": {
+    "@hotwired/turbo-rails": "^8.0.0-beta.2",
+    "controllers": "^0.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.3"
