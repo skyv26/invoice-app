@@ -10,6 +10,9 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/preset-env": "^7.23.6",
+    "@babel/preset-react": "^7.23.3",
     "eslint": "7.x",
     "eslint-config-airbnb": "18.x",
     "eslint-plugin-import": "2.x",
