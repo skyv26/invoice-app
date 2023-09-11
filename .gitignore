@@ -13,6 +13,7 @@
 /yarn.lock
 /dist
 .parcel-cache
+/app/assets/builds
 
 # Ignore all environment files (except templates).
 /.env*
