@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  payment_terms: 1
+  payment_due_date: 2023-12-28
+  status: MyString
+  total: 9.99
+  client: one
+  user: one
+
+two:
+  description: MyString
+  payment_terms: 1
+  payment_due_date: 2023-12-28
+  status: MyString
+  total: 9.99
+  client: two
+  user: two
