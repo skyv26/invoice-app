@@ -67,5 +67,5 @@ group :test do
 end
 
 group :development do
-  gem "hotwire-livereload"
+  gem "rails_live_reload"
 end
