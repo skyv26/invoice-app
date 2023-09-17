@@ -4,8 +4,8 @@
   "repository": "git@github.com:skyv26/invoice-app.git",
   "author": "Aakash Verma <dev.aakashv@gmail.com>",
   "scripts": {
-    "start": "rm -rf .parcel-cache .cache && rm -rf app/assets/builds && parcel ./app/javascript/application.js --dist-dir ./app/assets/builds",
-    "build": "rm -rf .parcel-cache .cache && rm -rf app/assets/builds && parcel build ./app/javascript/application.js --dist-dir ./app/assets/builds",
+    "start": "rm -rf .parcel-cache/* && rm -rf app/assets/builds/* && parcel ./app/javascript/application.js --dist-dir ./app/assets/builds --no-hmr",
+    "build": "rm -rf .parcel-cache && rm -rf app/assets/builds && parcel build ./app/javascript/application.js --dist-dir ./app/assets/builds",
     "lint": "npx eslint ."
   },
   "license": "MIT",
@@ -30,6 +30,7 @@
     "tailwindcss": "^3.3.6"
   },
   "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.0-beta.2",
     "controllers": "^0.0.2",
     "react": "^18.2.0",
