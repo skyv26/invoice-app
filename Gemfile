@@ -69,3 +69,7 @@ end
 group :development do
   gem "rails_live_reload"
 end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0.0'
+end
