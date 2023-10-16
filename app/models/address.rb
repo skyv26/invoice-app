@@ -17,18 +17,50 @@ class Address < ApplicationRecord
     end
 
     def street_must_be_string
-        errors.add(:street, 'must be a string') unless street_before_type_cast.is_a?(String)
+        street_before = street_before_type_cast
+        
+        errors.add(:street, 'must be a string') unless street_before.is_a?(String)
+
+        return unless street_before.is_a?(String)
+        
+        if street_before.size <= 2
+            errors.add(:street, 'should be valid and greater than 2 characters')
+        end
     end
 
     def city_must_be_string
-        errors.add(:city, 'must be a string') unless city_before_type_cast.is_a?(String)
+        city_before = city_before_type_cast
+        
+        errors.add(:city, 'must be a string') unless city_before.is_a?(String)
+
+        return unless city_before.is_a?(String)
+        
+        if city_before.size <= 2
+            errors.add(:city, 'should be valid and greater than 2 characters')
+        end
     end
 
     def postal_code_must_be_string
-        errors.add(:postal_code, 'must be a string and between 5-10 digits') unless postal_code_before_type_cast.is_a?(String)
+        postal_code_before = postal_code_before_type_cast
+        
+        errors.add(:postal_code, 'must be a string') unless postal_code_before.is_a?(String)
+
+        return unless postal_code_before.is_a?(String)
+        
+        if postal_code_before.size <= 4
+            errors.add(:postal_code, 'should be valid and greater than 4 characters')
+        end
     end
 
-    def country_code_must_be_string
-        errors.add(:country, 'must be a string') unless country_code_before_type_cast.is_a?(String)
+    def country_must_be_string
+        country_before = country_before_type_cast
+        
+        errors.add(:country, 'must be a string') unless country_before.is_a?(String)
+
+        return unless country_before.is_a?(String)
+        
+        if country_before.size <= 2
+            errors.add(:country, 'should be valid and greater than 2 characters')
+        end
     end
 end
