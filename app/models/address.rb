@@ -1,4 +1,6 @@
 class Address < ApplicationRecord
+    self.inheritance_column = :_type_disabled
+
     has_one :client
     has_one :user
 
