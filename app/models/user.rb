@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validate :first_name_must_be_string
   validate :last_name_must_be_string
   validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :date_of_birth, presence: true, date: { before: Proc.new { Time.now }, message: 'must be in the past' }
+  validates :date_of_birth, presence: true
 
   def first_name_must_be_string
     first_name_before = first_name_before_type_cast
