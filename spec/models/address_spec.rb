@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Address, type: :model do
-  subject { described_class.new(type: 'client', street: '106 Kendell Street', city: 'Sharrington', postal_code: 'NR24 5WQ', country: 'United Kingdom') }
+  subject do
+    described_class.new(type: 'client', street: '106 Kendell Street', city: 'Sharrington', postal_code: 'NR24 5WQ',
+                        country: 'United Kingdom')
+  end
   context 'test cases for either
           bad or invalid arguments.' do
     describe Address do

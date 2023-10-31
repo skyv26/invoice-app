@@ -6,12 +6,15 @@ RSpec.describe User, type: :model do
       type: 'sender',
       street: '19 Union Terrace',
       city: 'Sharrington',
-      postal_code: 'E1 3EZ', 
+      postal_code: 'E1 3EZ',
       country: 'United Kingdom'
     )
   end
 
-  subject { described_class.new(first_name: 'Jensen', last_name: 'Huang', date_of_birth: '01-01-1985', email_address: 'jensenh@mail.com', address: sender_address)}
+  subject do
+    described_class.new(first_name: 'Jensen', last_name: 'Huang', date_of_birth: '01-01-1985',
+                        email_address: 'jensenh@mail.com', address: sender_address)
+  end
 
   context 'table test cases checking for either bad argument or invalid information.' do
     describe User do
@@ -20,9 +23,7 @@ RSpec.describe User, type: :model do
           subject.first_name = value
           expect(subject).not_to be_valid, "Expected '#{value}' to be invalid for first_name of the Sender"
         end
-      end
 
-      [nil, true, false, 1234, 0.16, 'ok'].each do |value|
         it 'require last_name to be a non-empty string' do
           subject.last_name = value
           expect(subject).not_to be_valid, "Expected '#{value}' to be invalid for last_name of the Sender"

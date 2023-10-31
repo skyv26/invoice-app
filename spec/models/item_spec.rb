@@ -6,7 +6,7 @@ RSpec.describe Item, type: :model do
       type: 'sender',
       street: '19 Union Terrace',
       city: 'Sharrington',
-      postal_code: 'E1 3EZ', 
+      postal_code: 'E1 3EZ',
       country: 'United Kingdom'
     )
   end
@@ -16,7 +16,7 @@ RSpec.describe Item, type: :model do
       first_name: 'Jensen',
       last_name: 'Huang',
       date_of_birth: '01-01-1985',
-      email_address: 'jensenh@mail.com', 
+      email_address: 'jensenh@mail.com',
       address: sender_address
     )
   end
@@ -26,7 +26,7 @@ RSpec.describe Item, type: :model do
       type: 'client',
       street: '106 Kendell Street',
       city: 'Sharrington',
-      postal_code: 'NR24 5WQ', 
+      postal_code: 'NR24 5WQ',
       country: 'United Kingdom'
     )
   end
@@ -46,11 +46,12 @@ RSpec.describe Item, type: :model do
       payment_due_date: '01-01-2025',
       status: 'paid',
       total: 1800.95,
-      client: client,
-      user: sender)
+      client:,
+      user: sender
+    )
   end
 
-  subject { described_class.new(name: 'Brand Guidelines', quantity: 1, price_per_unit: 1800.90, invoice: invoice)}
+  subject { described_class.new(name: 'Brand Guidelines', quantity: 1, price_per_unit: 1800.90, invoice:) }
 
   context 'table test cases checking for either bad argument or invalid information.' do
     describe Item do
@@ -65,7 +66,7 @@ RSpec.describe Item, type: :model do
     describe Invoice do
       [nil, true, false, 1234, 0.16, 'ok'].each do |value|
         it 'require description to be a non-empty string' do
-        invoice.description = value
+          invoice.description = value
           expect(invoice).not_to be_valid, "Expected '#{value}' to be invalid for description of the Invoice"
         end
       end
@@ -188,9 +189,7 @@ RSpec.describe Item, type: :model do
           sender.first_name = value
           expect(sender).not_to be_valid, "Expected '#{value}' to be invalid for first_name of the Sender"
         end
-      end
 
-      [nil, true, false, 1234, 0.16, 'ok'].each do |value|
         it 'require last_name to be a non-empty string' do
           sender.last_name = value
           expect(sender).not_to be_valid, "Expected '#{value}' to be invalid for last_name of the Sender"
@@ -205,5 +204,4 @@ RSpec.describe Item, type: :model do
       end
     end
   end
-
 end

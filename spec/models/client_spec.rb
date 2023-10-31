@@ -6,12 +6,12 @@ RSpec.describe Client, type: :model do
       type: 'client',
       street: '106 Kendell Street',
       city: 'Sharrington',
-      postal_code: 'NR24 5WQ', 
+      postal_code: 'NR24 5WQ',
       country: 'United Kingdom'
     )
   end
 
-  subject { described_class.new(name: 'Jensen Huang', email_address: 'jensenh@mail.com', address: address)}
+  subject { described_class.new(name: 'Jensen Huang', email_address: 'jensenh@mail.com', address:) }
 
   context 'table test cases checking for either bad argument or invalid information.' do
     describe Client do

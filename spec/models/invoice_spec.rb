@@ -6,7 +6,7 @@ RSpec.describe Invoice, type: :model do
       type: 'sender',
       street: '19 Union Terrace',
       city: 'Sharrington',
-      postal_code: 'E1 3EZ', 
+      postal_code: 'E1 3EZ',
       country: 'United Kingdom'
     )
   end
@@ -16,7 +16,7 @@ RSpec.describe Invoice, type: :model do
       first_name: 'Jensen',
       last_name: 'Huang',
       date_of_birth: '01-01-1985',
-      email_address: 'jensenh@mail.com', 
+      email_address: 'jensenh@mail.com',
       address: sender_address
     )
   end
@@ -26,7 +26,7 @@ RSpec.describe Invoice, type: :model do
       type: 'client',
       street: '106 Kendell Street',
       city: 'Sharrington',
-      postal_code: 'NR24 5WQ', 
+      postal_code: 'NR24 5WQ',
       country: 'United Kingdom'
     )
   end
@@ -39,7 +39,10 @@ RSpec.describe Invoice, type: :model do
     )
   end
 
-  subject { described_class.new(description: 'Re-branding', payment_terms: 1, payment_due_date: '01-01-2025', status: 'paid', total: 1800.95, client: client, user: sender)}
+  subject do
+    described_class.new(description: 'Re-branding', payment_terms: 1, payment_due_date: '01-01-2025', status: 'paid',
+                        total: 1800.95, client:, user: sender)
+  end
 
   context 'table test cases checking for either bad argument or invalid information.' do
     describe Invoice do
@@ -168,9 +171,7 @@ RSpec.describe Invoice, type: :model do
           sender.first_name = value
           expect(sender).not_to be_valid, "Expected '#{value}' to be invalid for first_name of the Sender"
         end
-      end
 
-      [nil, true, false, 1234, 0.16, 'ok'].each do |value|
         it 'require last_name to be a non-empty string' do
           sender.last_name = value
           expect(sender).not_to be_valid, "Expected '#{value}' to be invalid for last_name of the Sender"
