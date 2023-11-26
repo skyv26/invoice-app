@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   belongs_to :address
+  has_many :invoices
 
   validate :first_name_must_be_string
   validate :last_name_must_be_string
