@@ -1,24 +1,21 @@
 class Api::V1::UsersController < ApplicationController
   def index
-    def index
-      users = User.all
-
-      render json: users.to_json(
-        include: {
-            address: {},
-            invoices: {
-              include: {
-                client: {
-                  include: {
-                    address: {}
-                  }
-                },
-                items: {}
-              }
+    users = User.all
+    render json: users.to_json(
+      include: {
+          address: {},
+          invoices: {
+            include: {
+              client: {
+                include: {
+                  address: {}
+                }
+              },
+              items: {}
             }
           }
-      )
-    end
+        }
+    )
   end
 
   def show
