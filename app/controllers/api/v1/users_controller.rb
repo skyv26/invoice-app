@@ -19,7 +19,7 @@ class Api::V1::UsersController < ApplicationController
   # end
 
   def index
-    users = User.all
+    users = User.includes(:address, :invoices).all
     render json: users, each_serializer: Api::V1::UserSerializer
   end
 
