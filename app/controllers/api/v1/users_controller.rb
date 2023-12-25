@@ -23,15 +23,11 @@ class Api::V1::UsersController < ApplicationController
     render json: users, each_serializer: Api::V1::UserSerializer
   end
 
-  def show
-  end
+  def show; end
 
-  def create
-  end
+  def create; end
 
-  def update
-  end
+  def update; end
 
-  def delete
-  end
+  def delete; end
 end

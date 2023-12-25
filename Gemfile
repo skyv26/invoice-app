@@ -68,6 +68,6 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem "faker", "~> 3.2"
+gem 'faker', '~> 3.2'
 
-gem "active_model_serializers", "~> 0.10.14"
+gem 'active_model_serializers', '~> 0.10.14'
