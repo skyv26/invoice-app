@@ -26,7 +26,7 @@
 
 # 📖 Invoice App <a name="about-project"></a>
 
-**[your_project__name]** is a...
+**Invoice App** is a full-stack application made with the help of Rails with React.
 
 ## 🛠 Built With <a name="built-with"></a>
 
