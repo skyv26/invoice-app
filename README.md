@@ -8,7 +8,7 @@
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
+  - [Prerequisites](#prerequisites) 
   - [Setup](#setup)
   - [Install](#install)
   - [Usage](#usage)
